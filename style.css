@@ -1,0 +1,223 @@
+:root {
+  --modal-duration: 1s;
+  --primary-color: #EF7F43;
+  --secoundary-color: #C49170;
+  --white:#fff;
+}
+
+:root body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+:root body nav {
+  background-color: var(--primary-color);
+  max-width: 100%;
+  width: 250px;
+  height: 100vh;
+  border-right: 1px solid var(--secoundary-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100px;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+:root body nav .logo {
+  text-align: center;
+}
+
+:root body nav .logo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 30px 0;
+}
+
+:root body nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+:root body nav ul li {
+  list-style: none;
+  border-bottom: 2px solid var(--secoundary-color);
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+:root body nav ul li a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+:root body nav ul li a:hover {
+  text-decoration: underline;
+}
+
+:root body nav ul li:first-child {
+  border-top: 2px solid var(--secoundary-color);
+}
+
+:root body header {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 40px 15px;
+}
+
+:root body header p {
+  margin: 30px 0;
+}
+
+:root body header .btn-toggle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--white);
+}
+
+:root body .container {
+  padding: 15px;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 800px;
+}
+
+:root body .container h2 {
+  color: var(--secoundary-color);
+}
+
+:root body .container p {
+  font-size: 16px;
+}
+
+:root .modal-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+:root .modal-container .modal {
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: 100%;
+  width: 400px;
+  -webkit-animation-name: openModal;
+          animation-name: openModal;
+  -webkit-animation-duration: var(--modal-duration);
+          animation-duration: var(--modal-duration);
+}
+
+:root .modal-container .modal .modal-header {
+  background-color: var(--secoundary-color);
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  padding: 15px;
+}
+
+:root .modal-container .modal .modal-header button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+}
+
+:root .modal-container .modal .modal-body {
+  padding: 5px 10px;
+}
+
+:root .modal-container .modal .modal-body form {
+  padding: 20px;
+}
+
+:root .modal-container .modal .modal-body form div {
+  margin: 15px 0;
+}
+
+:root .modal-container .modal .modal-body form div label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+:root .modal-container .modal .modal-body form div input {
+  padding: 8px;
+  width: 90%;
+}
+
+:root .modal-container .modal .modal-body form div input:focus {
+  outline: none;
+}
+
+:root button, :root input[type=submit] {
+  background-color: var(--secoundary-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 100%;
+  color: var(--white);
+}
+
+:root button:active, :root input[type=submit]:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+:root .show-modal {
+  display: block;
+}
+
+:root .show-nav {
+  -webkit-transform: translateX(250px);
+          transform: translateX(250px);
+}
+
+@-webkit-keyframes openModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes openModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 600px) {
+  .btn-toggle {
+    top: 0px;
+    left: 0px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
